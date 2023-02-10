@@ -29,7 +29,7 @@ module.exports = {
         ],
         'import/no-unresolved': 'off',
         'import/prefer-default-export': 'off',
-        'no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
+        'no-unused-vars': 'off',
         'react/react-in-jsx-scope': 'off',
         'react/require-default-props': 'off',
         'react/function-component-definition': 'off',
@@ -38,8 +38,14 @@ module.exports = {
         'import/extensions': 'off',
         'import/no-extraneous-dependencies': 'off',
         'no-underscore-dangle': 'off',
-        'i18next/no-literal-string': ['error', { markupOnly: true }],
+        'i18next/no-literal-string': [2, {
+            markupOnly: true,
+            ignoreAttribute: ['to'],
+        }],
         'max-len': ['error', { ignoreComments: true }],
+        '@typescript-eslint/no-unused-vars': [
+            'warn', { argsIgnorePattern: '^_' },
+        ],
     },
     globals: {
         __IS_DEV__: true,

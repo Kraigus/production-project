@@ -1,5 +1,9 @@
 {
-    "Текстовый пример": "Text example",
-    "Перевод": "Translate",
-    "Язык": "English"
+  "Текстовый пример": "Text example",
+  "Перевод": "Translate",
+  "Язык": "English",
+  "Страница не найдена": "Page not found",
+  "glavnaya": "Home",
+  "O saite": "About",
+  "toggle": "Toggle"
 }
