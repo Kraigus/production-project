@@ -5,5 +5,8 @@
   "Страница не найдена": "Page not found",
   "glavnaya": "Home",
   "O saite": "About",
-  "toggle": "Toggle"
+  "toggle": "Toggle",
+  "unexpectableError": "Unexpectable error was found",
+  "reloadPage": "Reload page",
+  "throw error": "throw error"
 }
