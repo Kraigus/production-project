@@ -5,7 +5,7 @@ import { buildSvgLoader } from './loaders/buildSvgLoader';
 
 export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
     const { isDev } = options;
-    const svgLoader = buildSvgLoader()
+    const svgLoader = buildSvgLoader();
 
     const babelLoader = {
         test: /\.(js|jsx|tsx)$/,

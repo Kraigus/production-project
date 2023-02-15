@@ -1,22 +1,22 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Theme } from 'app/providers/ThemeProvider';
-import { Button, ThemeButton } from './Button';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { Button, ThemeButton } from './Button';
 
 export default {
-  title: 'shared/Button',
-  component: Button,
-  argTypes: {
-    backgroundColor: { control: 'color' },
-  },
+    title: 'shared/Button',
+    component: Button,
+    argTypes: {
+        backgroundColor: { control: 'color' },
+    },
 } as ComponentMeta<typeof Button>;
 
 const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
-  children: 'Text'
+    children: 'Text',
 };
 export const Clear = Template.bind({});
 Clear.args = {
@@ -33,5 +33,4 @@ OutlinedDark.args = {
     children: 'Text',
     theme: ThemeButton.OUTLINED,
 };
-OutlinedDark.decorators = [ThemeDecorator(Theme.DARK)]
-
+OutlinedDark.decorators = [ThemeDecorator(Theme.DARK)];
