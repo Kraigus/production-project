@@ -5,10 +5,11 @@ import { FC } from 'react';
 
 interface LangSwitcherProps {
     className?: string;
+    short?: boolean;
 }
 
 export const LangSwitcher: FC<LangSwitcherProps> = (props) => {
-    const { className } = props;
+    const { className, short } = props;
     const { t, i18n } = useTranslation();
     const toggle = () => {
         i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru');
@@ -19,7 +20,7 @@ export const LangSwitcher: FC<LangSwitcherProps> = (props) => {
             onClick={toggle}
             className={classNames('', {}, [className])}
         >
-            {t('Язык')}
+            {t(short ? 'Короткий язык' : 'Язык')}
         </Button>
     );
 };

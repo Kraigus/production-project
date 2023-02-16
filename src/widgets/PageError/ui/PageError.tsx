@@ -17,10 +17,10 @@ export const PageError: FC<PageErrorProps> = (props) => {
     return (
         <div className={classNames(cls.PageError, {}, [className])}>
             <p>
-                {t('unexpectableError')}
+                {t('Произошла непредвиденная ошибка')}
             </p>
             <Button onClick={reloadPage}>
-                {t('reloadPage')}
+                {t('Обновить страницу')}
             </Button>
         </div>
     );
