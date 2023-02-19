@@ -11,6 +11,7 @@ export default {
         backgroundColor: { control: 'color' },
     },
 } as ComponentMeta<typeof MainPage>;
+
 const Template: ComponentStory<typeof MainPage> = (args) => <MainPage {...args} />;
 
 export const Normal = Template.bind({});
