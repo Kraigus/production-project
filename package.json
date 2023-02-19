@@ -21,7 +21,7 @@
     "storybook:build": "build-storybook -c ./config/storybook",
     "test:ui:json": "node scripts/generate-visual-json-report.js",
     "test:ui:html": "reg-cli --from .loki/report.json --report .loki/report.html",
-    "test:ui:report": "npm run test:ui:json && npm run test:ui:html"
+    "test:ui:report": "npm run test:ui:json && npm rtest:ui:html"
   },
   "keywords": [],
   "author": "",
@@ -63,6 +63,7 @@
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-react": "^7.29.2",
+    "eslint-plugin-react-hooks": "^4.3.0",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
     "identity-obj-proxy": "^3.0.0",
