@@ -13,8 +13,11 @@
   "Переключить": "Toggle",
   "Короткий язык": "En",
   "Войти": "Login",
+  "Выйти": "Logout",
   "Increment": "Increment",
   "Decrement" : "Decrement",
   "Введите пароль": "Enter password",
-  "Введите username": "Enter username"
+  "Введите username": "Enter username",
+  "Форма авторизации": "Authorization form",
+  "Вы ввели неверный логин или пароль": "Incorrect login or password"
 }

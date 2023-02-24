@@ -41,7 +41,7 @@ module.exports = {
             markupOnly: true,
             ignoreAttribute: ['to', 'data-testid'],
         }],
-        'max-len': ['error', { ignoreComments: true, code: 100 }],
+        'max-len': ['error', { ignoreComments: true, code: 120 }],
         '@typescript-eslint/no-unused-vars': [
             'warn', { argsIgnorePattern: '^_' },
         ],
