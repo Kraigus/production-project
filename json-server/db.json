@@ -25,5 +25,14 @@
         "password": "123"
       }
     ],
-    "profile": { "name": "typicode" }
+    "profile": {
+       "first": "Антон",
+       "lastname": "Елисеев",
+       "age": 26,
+       "currency": "RUB",
+       "country": "Russia",
+       "city": "Moscow",
+       "username": "admin",
+       "avatar": "https://i.redd.it/f6npt1gcjcc31.jpg"
+    }
 }
