@@ -1,6 +1,12 @@
-{    
-    "Профиль" : "Profile page",
-    "Редактировать" : "Edit",
+{
+    "Профиль": "Profile page",
+    "Редактировать": "Edit",
     "Ваше имя": "Your firstname",
-    "Ваша фамилия": "Your lastname"
+    "Ваша фамилия": "Your lastname",
+    "Отменить": "Cancel",
+    "Сохранить": "Save",
+    "Ваш возраст": "Your age",
+    "Город": "City",
+    "Введите имя пользователя": "Enter your username",
+    "Введите ссылку на аватар": "Enter url to avatar"
 }

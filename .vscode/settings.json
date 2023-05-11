@@ -1,9 +1,17 @@
 {
     "typescript.tsdk": "node_modules/typescript/lib",
-    "i18n-ally.localesPaths": [
-        "public/locales",
-        "src/shared/config/i18n"
-    ],
+    "i18n-ally.localesPaths": ["public/locales", "src/shared/config/i18n"],
     "i18n-ally.keystyle": "flat",
     "i18n-ally.keepFulfilled": true,
+    "eslint.format.enable": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    "eslint.validate": ["javascript", "typescript", "javascriptreact", "typescriptreact"],
+    "stylelint.enable": true,
+    "css.validate": true,
+    "scss.validate": true,
+    "stylelint.validate": ["css", "scss"]
 }

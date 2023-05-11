@@ -1,19 +1,14 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { ThunkConfig } from 'app/providers/StoreProvider';
-import { Profile, ProfileSchema } from '../../types/profile';
-
-interface fetchProfiledataProps {
-    username: string,
-    password: string
-}
+import { Profile } from '../../types/profile';
 
 export const fetchProfileData = createAsyncThunk<
     Profile,
     void,
     ThunkConfig<string>
 >(
-    'login/fetchProfiledata',
-    async (authData, thunkApi) => {
+    'profile/fetchProfileData',
+    async (_, thunkApi) => {
         const { extra, rejectWithValue } = thunkApi;
         try {
             const response = await extra.api.get<Profile>('/profile');
