@@ -22,9 +22,9 @@ export function buildPlugins({
             __API__: JSON.stringify(apiUrl),
             __PROJECT__: JSON.stringify(project),
         }),
-        new ReactRefreshWebpackPlugin({ overlay: false }),
     ];
     if (isDev) {
+        plugins.push(new ReactRefreshWebpackPlugin({ overlay: false }));
         plugins.push(new webpack.HotModuleReplacementPlugin());
         plugins.push(
             new BundleAnalyzerPlugin({
