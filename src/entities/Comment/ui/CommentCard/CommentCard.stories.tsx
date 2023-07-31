@@ -12,4 +12,11 @@ export default {
 const Template: ComponentStory<typeof CommentCard> = (args) => <CommentCard {...args} />;
 
 export const Normal = Template.bind({});
-Normal.args = {};
+Normal.args = {
+    comment: { id: '1', text: '12313', user: { id: '1', username: 'Tony' } },
+};
+
+export const Loading = Template.bind({});
+Loading.args = {
+    isLoading: true,
+};

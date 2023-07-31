@@ -23,5 +23,7 @@
     "Профиль": "Profile Page",
     "Статьи": "Articles",
     "Произошла ошибка при загрузке статьи": "An unexpected error has occurred while article loading",
-    "Комментарии отсутствуют": "No comments were found"
+    "Комментарии отсутствуют": "No comments were found",
+    "Введите текст комментария": "Enter comment text",
+    "Отправить": "Send"
 }

@@ -4,18 +4,16 @@ import { ReduxStoreWithManager, StateSchemaKey } from 'app/providers/StoreProvid
 import { Reducer } from '@reduxjs/toolkit';
 
 export type ReducersList = {
-    [name in StateSchemaKey]?: Reducer
-}
+    [name in StateSchemaKey]?: Reducer;
+};
 
 interface DynamicModuleLoaderProps {
-    removeAfterUnmount: boolean
-    reducers: ReducersList
+    removeAfterUnmount?: boolean;
+    reducers: ReducersList;
 }
 
 export const DynamicModuleLoader: FC<DynamicModuleLoaderProps> = (props) => {
-    const {
-        children, reducers, removeAfterUnmount = false,
-    } = props;
+    const { children, reducers, removeAfterUnmount = true } = props;
     const dispatch = useDispatch();
     const store = useStore() as ReduxStoreWithManager;
     useEffect(() => {
@@ -31,13 +29,11 @@ export const DynamicModuleLoader: FC<DynamicModuleLoaderProps> = (props) => {
                 });
             }
         };
-    // eslint-disable-next-line
+        // eslint-disable-next-line
     }, []);
 
     return (
-    // eslint-disable-next-line react/jsx-no-useless-fragment
-        <>
-            { children }
-        </>
+        // eslint-disable-next-line react/jsx-no-useless-fragment
+        <>{children}</>
     );
 };
