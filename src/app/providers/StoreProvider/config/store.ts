@@ -1,22 +1,22 @@
 import {
-    configureStore, ReducersMapObject, Reducer,
+    configureStore,
+    ReducersMapObject,
+    Reducer,
     CombinedState,
 } from '@reduxjs/toolkit';
 import { counterReducer } from 'entities/Counter';
 import { userReducer } from 'entities/User';
-import { useDispatch } from 'react-redux';
+import { uiReducer } from 'features/UI';
 import { $api } from 'shared/api/api';
 import { createReducerManager } from './reducerManager';
 import { StateSchema, ThunkExtraArg } from './StateSchema';
 
-export function createReduxStore(
-    initialState?: StateSchema,
-    asynReducers?: ReducersMapObject<StateSchema>,
-) {
-    const rootReducers : ReducersMapObject<StateSchema> = {
+export function createReduxStore(initialState?: StateSchema, asynReducers?: ReducersMapObject<StateSchema>) {
+    const rootReducers: ReducersMapObject<StateSchema> = {
         ...asynReducers,
         counter: counterReducer,
         user: userReducer,
+        ui: uiReducer,
     };
 
     const reducerManager = createReducerManager(rootReducers);
@@ -31,8 +31,7 @@ export function createReduxStore(
         preloadedState: initialState,
         middleware: (getDefaultMiddleware) => getDefaultMiddleware({
             thunk: {
-                extraArgument:
-                    extraArg,
+                extraArgument: extraArg,
             },
         }),
     });
@@ -41,5 +40,4 @@ export function createReduxStore(
     return store;
 }
 
-export type AppDispatch = ReturnType<typeof createReduxStore>['dispatch']
-export const useAppDispatch = () => useDispatch<AppDispatch>();
+export type AppDispatch = ReturnType<typeof createReduxStore>['dispatch'];
