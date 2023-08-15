@@ -34,10 +34,10 @@ module.exports = {
             2,
             {
                 markupOnly: true,
-                ignoreAttribute: ['to', 'data-testid'],
+                ignoreAttribute: ['to', 'data-testid', 'target'],
             },
         ],
-        'max-len': ['error', { ignoreComments: true, code: 120 }],
+        'max-len': ['error', { ignoreComments: true, code: 140 }],
         '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
         'jsx-a11y/no-static-element-interactions': 'off',
         'jsx-a11y/click-events-have-key-events': 'off',
@@ -47,6 +47,7 @@ module.exports = {
         'no-undef': 'off',
         'no-console': 'off',
         'react/no-array-index-key': 'off',
+        'arrow-body-style': 'off',
     },
     globals: {
         __IS_DEV__: true,

@@ -1,5 +1,5 @@
 import { t } from 'i18next';
-import { memo } from 'react';
+import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Text, TextSize } from 'shared/ui/Text/Text';
 import { Article, ArticleView } from '../../model/types/article';
@@ -12,6 +12,7 @@ interface ArticleListProps {
     articles: Article[];
     isLoading?: boolean;
     view?: ArticleView;
+    target?: HTMLAttributeAnchorTarget
 }
 
 const getSkeletons = (view: ArticleView) => new Array(view === ArticleView.SMALL ? 9 : 3).fill(0).map((item, index) => (
@@ -20,11 +21,11 @@ const getSkeletons = (view: ArticleView) => new Array(view === ArticleView.SMALL
 
 export const ArticleList = memo((props: ArticleListProps) => {
     const {
-        className, articles, isLoading, view = ArticleView.SMALL,
+        className, articles, isLoading, view = ArticleView.SMALL, target,
     } = props;
 
     const renderArticle = (article: Article) => (
-        <ArticleListItem key={article.id} className={cls.card} article={article} view={view} />
+        <ArticleListItem target={target} key={article.id} className={cls.card} article={article} view={view} />
     );
 
     if (!isLoading && !articles.length) {
