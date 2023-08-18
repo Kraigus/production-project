@@ -3,6 +3,7 @@ import { Mods, classNames } from 'shared/lib/classNames/classNames';
 import cls from './Text.module.scss';
 
 export enum TextTheme {
+    INVERTED = 'inverted',
     NORMAL = 'primary',
     ERROR = 'error',
 }
