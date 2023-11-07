@@ -16,5 +16,11 @@
     "stylelint.validate": ["css", "scss"],
     "files.associations": {
         "**/.fttemplates/**": "plaintext"
+    },
+    "[scss]": {
+        "editor.defaultFormatter": "vscode.css-language-features"
+    },
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
     }
 }
