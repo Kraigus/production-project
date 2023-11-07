@@ -11,6 +11,7 @@ import { useSelector } from 'react-redux';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Page } from 'widgets/Page';
+import { VStack } from 'shared/ui/Stack';
 import {
     getArticleRecommendations,
 } from '../../model/slices/articleDetailsPageRecommendationsSlice';
@@ -23,7 +24,6 @@ import { addCommentForArticle } from '../../model/services/addCommentForArticle/
 import { fetchArticleRecommendations } from '../../model/services/fetchArticleRecommendations/fetchArticleRecommendations';
 import { articleDetailsPageReducer } from '../../model/slices';
 import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
-import { VStack } from 'shared/ui/Stack';
 
 interface ArticleDetailsPageProps {
     className?: string;
@@ -62,7 +62,7 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
             <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
-                <VStack gap='16' max>
+                <VStack gap="16" max>
                     <ArticleDetailsPageHeader />
                     <ArticleDetails id={id} />
                     <Text size={TextSize.L} className={cls.commentTitle} title={t('Рекомендуем')} />

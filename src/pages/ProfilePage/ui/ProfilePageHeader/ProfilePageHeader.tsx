@@ -38,25 +38,25 @@ export const ProfilePageHeader: FC<ProfilePageHeaderProps> = (props) => {
     }, [dispatch]);
 
     return (
-        <HStack max justify='between' className={classNames('', {}, [className])}>
+        <HStack max justify="between" className={classNames('', {}, [className])}>
             <Text title={t('Профиль')} />
             {canEdit && (
-                <>
+                <div>
                     {readonly ? (
-                        <Button onClick={onEdit} className={''} theme={ThemeButton.OUTLINED}>
+                        <Button onClick={onEdit} className="" theme={ThemeButton.OUTLINED}>
                             {t('Редактировать')}
                         </Button>
                     ) : (
-                        <HStack gap='8'>
-                            <Button onClick={onCancelEdit} className={''} theme={ThemeButton.OUTLINED_RED}>
+                        <HStack gap="8">
+                            <Button onClick={onCancelEdit} className="" theme={ThemeButton.OUTLINED_RED}>
                                 {t('Отменить')}
                             </Button>
-                            <Button onClick={onSave} className={''} theme={ThemeButton.OUTLINED}>
+                            <Button onClick={onSave} className="" theme={ThemeButton.OUTLINED}>
                                 {t('Сохранить')}
                             </Button>
                         </HStack>
                     )}
-                </>
+                </div>
             )}
         </HStack>
     );

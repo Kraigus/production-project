@@ -6,8 +6,8 @@ import { Button, ThemeButton } from 'shared/ui/Button/Button';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { useSelector } from 'react-redux';
 import { getArticleDetailsData } from 'entities/Article';
-import { getCanEditArticle } from '../../model/selectors/article';
 import { HStack } from 'shared/ui/Stack';
+import { getCanEditArticle } from '../../model/selectors/article';
 
 interface ArticleDetailsPageHeaderProps {
     className?: string;
@@ -30,7 +30,7 @@ export const ArticleDetailsPageHeader = memo((props: ArticleDetailsPageHeaderPro
     }, [navigate, article?.id]);
 
     return (
-        <HStack justify='between' max className={classNames('', {}, [className])}>
+        <HStack justify="between" max className={classNames('', {}, [className])}>
             <Button theme={ThemeButton.OUTLINED} onClick={onBackToList}>
                 {t('Назад к списку')}
             </Button>

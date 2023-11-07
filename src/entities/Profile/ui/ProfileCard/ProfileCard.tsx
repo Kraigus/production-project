@@ -7,9 +7,9 @@ import { Loader } from 'shared/ui/Loader/Loader';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Currency, CurrencySelect } from 'entities/Currency';
 import { Country, CountrySelect } from 'entities/Country';
+import { HStack, VStack } from 'shared/ui/Stack';
 import cls from './ProfileCard.module.scss';
 import { Profile } from '../../model/types/profile';
-import { HStack, VStack } from 'shared/ui/Stack';
 
 interface ProfileCardProps {
     className?: string;
@@ -52,7 +52,7 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
 
     if (isLoading) {
         return (
-            <HStack justify='center' max className={classNames(cls.ProfileCard, {}, [className, cls.loading])}>
+            <HStack justify="center" max className={classNames(cls.ProfileCard, {}, [className, cls.loading])}>
                 <Loader />
             </HStack>
         );
@@ -60,7 +60,7 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
 
     if (error) {
         return (
-            <HStack justify='center' max className={classNames(cls.ProfileCard, {}, [className, cls.error])}>
+            <HStack justify="center" max className={classNames(cls.ProfileCard, {}, [className, cls.error])}>
                 <Text
                     theme={TextTheme.ERROR}
                     title={t('Произошла ошибка при загрузке профиля')}
@@ -72,9 +72,9 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
     }
 
     return (
-        <VStack gap='8' max className={classNames(cls.ProfileCard, mods, [className])}>
+        <VStack gap="8" max className={classNames(cls.ProfileCard, mods, [className])}>
             {data?.avatar && (
-                <HStack gap='8' max className={cls.avatarWrapper}>
+                <HStack gap="8" max className={cls.avatarWrapper}>
                     <Avatar src={data.avatar} />
                 </HStack>
             )}

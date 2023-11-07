@@ -2,7 +2,7 @@
     color: var(--primary-color);
 }
 
-.primary {
+.text {
     color: var(--secondary-color);
 }
 
@@ -36,6 +36,16 @@
 
 .center {
     text-align: center;
+}
+
+.size_s {
+    .title {
+        font: var(--font-m);
+    }
+
+    .text {
+        font: var(--font-s);
+    }
 }
 
 .size_m {

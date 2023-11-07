@@ -22,8 +22,8 @@ import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { useTranslation } from 'react-i18next';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { Page } from 'widgets/Page';
-import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 import { VStack } from 'shared/ui/Stack';
+import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 
 const reducers: ReducersList = {
     profile: profileReducer,
@@ -118,7 +118,7 @@ const ProfilePage: FC<ProfilePageProps> = (props) => {
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
             <Page className={classNames('', {}, [className])}>
-                <VStack gap='16' max>
+                <VStack gap="16" max>
                     <ProfilePageHeader />
                     {validateError?.length
                         && validateError.map((err) => (
