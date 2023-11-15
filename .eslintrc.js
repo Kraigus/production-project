@@ -49,6 +49,7 @@ module.exports = {
         'react/no-array-index-key': 'off',
         'arrow-body-style': 'off',
         'fds-import-checker/path-checker': 'error',
+        'linebreak-style': ['off', 'unix'],
     },
     globals: {
         __IS_DEV__: true,

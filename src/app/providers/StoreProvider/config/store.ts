@@ -1,22 +1,23 @@
-import {
-    configureStore,
-    ReducersMapObject,
-    Reducer,
-    CombinedState,
-} from '@reduxjs/toolkit';
+import { configureStore, ReducersMapObject } from '@reduxjs/toolkit';
 import { counterReducer } from 'entities/Counter';
 import { userReducer } from 'entities/User';
-import { uiReducer } from 'features/UI';
 import { $api } from 'shared/api/api';
-import { createReducerManager } from './reducerManager';
+import { CombinedState, Reducer } from 'redux';
+import { uiReducer } from 'features/UI';
+import { rtkApi } from 'shared/api/rtkApi';
 import { StateSchema, ThunkExtraArg } from './StateSchema';
+import { createReducerManager } from './reducerManager';
 
-export function createReduxStore(initialState?: StateSchema, asynReducers?: ReducersMapObject<StateSchema>) {
+export function createReduxStore(
+    initialState?: StateSchema,
+    asyncReducers?: ReducersMapObject<StateSchema>,
+) {
     const rootReducers: ReducersMapObject<StateSchema> = {
-        ...asynReducers,
+        ...asyncReducers,
         counter: counterReducer,
         user: userReducer,
         ui: uiReducer,
+        [rtkApi.reducerPath]: rtkApi.reducer,
     };
 
     const reducerManager = createReducerManager(rootReducers);
@@ -33,10 +34,12 @@ export function createReduxStore(initialState?: StateSchema, asynReducers?: Redu
             thunk: {
                 extraArgument: extraArg,
             },
-        }),
+        }).concat(rtkApi.middleware),
     });
+
     // @ts-ignore
     store.reducerManager = reducerManager;
+
     return store;
 }
 
