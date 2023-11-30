@@ -57,6 +57,7 @@ module.exports = {
                     'data-testid',
                     'target',
                     'fallback',
+                    'border',
                 ],
             },
         ],
