@@ -76,6 +76,7 @@ module.exports = {
         'react/no-array-index-key': 'off',
         'arrow-body-style': 'off',
         'fds-import-checker/path-checker': ['error', { alias: '@' }],
+        'fds-import-checker/public-api-imports': ['error', { alias: '@' }],
         'linebreak-style': ['off', 'unix'],
     },
     globals: {
