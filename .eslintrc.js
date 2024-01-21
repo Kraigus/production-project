@@ -75,7 +75,7 @@ module.exports = {
         'no-console': 'off',
         'react/no-array-index-key': 'off',
         'arrow-body-style': 'off',
-        'fds-import-checker/path-checker': 'error',
+        'fds-import-checker/path-checker': ['error', { alias: '@' }],
         'linebreak-style': ['off', 'unix'],
     },
     globals: {
