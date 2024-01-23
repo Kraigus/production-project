@@ -23,10 +23,12 @@ module.exports = {
         'i18next',
         'react-hooks',
         'fds-import-checker',
+        'unused-imports',
     ],
     rules: {
         'react/jsx-indent': [2, 4],
         'react/jsx-indent-props': [2, 4],
+        'unused-imports/no-unused-imports': 'error',
         indent: [2, 4],
         'react/jsx-filename-extension': [
             2,
@@ -62,10 +64,6 @@ module.exports = {
             },
         ],
         'max-len': ['error', { ignoreComments: true, code: 140 }],
-        '@typescript-eslint/no-unused-vars': [
-            'warn',
-            { argsIgnorePattern: '^_' },
-        ],
         'jsx-a11y/no-static-element-interactions': 'off',
         'jsx-a11y/click-events-have-key-events': 'off',
         'react-hooks/rules-of-hooks': 'error',
@@ -91,10 +89,7 @@ module.exports = {
             'error',
             {
                 alias: '@',
-                ignoreImportPatterns: [
-                    '**/StoreProvider',
-                    '**/testing',
-                ],
+                ignoreImportPatterns: ['**/StoreProvider', '**/testing'],
             },
         ],
         'linebreak-style': ['off', 'unix'],
