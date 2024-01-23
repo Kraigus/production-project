@@ -87,6 +87,16 @@ module.exports = {
                 ],
             },
         ],
+        'fds-import-checker/layer-imports': [
+            'error',
+            {
+                alias: '@',
+                ignoreImportPatterns: [
+                    '**/StoreProvider',
+                    '**/testing',
+                ],
+            },
+        ],
         'linebreak-style': ['off', 'unix'],
     },
     globals: {
