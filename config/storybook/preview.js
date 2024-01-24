@@ -12,7 +12,15 @@ export const parameters = {
             color: /(background|color)$/i,
             date: /Date$/,
         },
-        layout: 'fullscreen',
+    },
+    layout: 'fullscreen',
+    themes: {
+        default: 'light',
+        list: [
+            { name: 'light', class: Theme.LIGHT, color: '#FFFFFF' },
+            { name: 'dark', class: Theme.DARK, color: '#000000' },
+            { name: 'violet', class: Theme.VIOLET, color: '#8b00ff' },
+        ],
     },
 };
 
