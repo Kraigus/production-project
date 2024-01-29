@@ -11,7 +11,7 @@ const AboutPage: FC<AboutPageProps> = (props) => {
     const { t } = useTranslation('about');
     const { className } = props;
     return (
-        <Page className={classNames('', {}, [className])}>{t('О сайте')}</Page>
+        <Page data-testid="AboutPage" className={classNames('', {}, [className])}>{t('О сайте')}</Page>
     );
 };
 
