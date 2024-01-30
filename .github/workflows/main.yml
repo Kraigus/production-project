@@ -28,7 +28,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - name: install modules
-        run: npm i --legacy-peer-deps
+        run: npm ci
       - name: build production project
         run: npm run build:prod
         if: always()
@@ -44,7 +44,7 @@ jobs:
       - name: Generate HTML report
         run: npm run test:ui:report
         if: always()
-      -name: move loki
+      - name: move loki
         run: mv .loki reports/
         if: always()
       - name: Setup Pages
@@ -72,7 +72,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - name: install modules
-        run: npm i --legacy-peer-deps
+        run: npm ci
       - name: linting typescript
         run: npm run lint:ts
         if: always()
