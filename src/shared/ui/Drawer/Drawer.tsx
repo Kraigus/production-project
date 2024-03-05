@@ -1,9 +1,4 @@
-import {
-    memo,
-    ReactNode,
-    useCallback,
-    useEffect,
-} from 'react';
+import { memo, ReactNode, useCallback, useEffect } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
 import {
@@ -29,12 +24,7 @@ export const DrawerContent = memo((props: DrawerProps) => {
     const [{ y }, api] = Spring.useSpring(() => ({ y: height }));
     const { theme } = useTheme();
 
-    const {
-        className,
-        children,
-        onClose,
-        isOpen,
-    } = props;
+    const { className, children, onClose, isOpen } = props;
 
     const openDrawer = useCallback(() => {
         api.start({ y: 0, immediate: false });

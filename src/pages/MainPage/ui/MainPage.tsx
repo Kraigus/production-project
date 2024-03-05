@@ -11,7 +11,10 @@ const MainPage: FC<MainPageProps> = (props) => {
     const { t } = useTranslation('main');
     const { className } = props;
     return (
-        <Page data-testid="MainPage" className={classNames('', {}, [className])}>
+        <Page
+            data-testid="MainPage"
+            className={classNames('', {}, [className])}
+        >
             {t('Главная страница')}
         </Page>
     );

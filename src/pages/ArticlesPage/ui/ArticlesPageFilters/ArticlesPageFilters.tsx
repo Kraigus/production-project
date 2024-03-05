@@ -1,9 +1,7 @@
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import {
-    ArticleSortField, ArticleView, ArticleType,
-} from '@/entities/Article';
+import { ArticleSortField, ArticleView, ArticleType } from '@/entities/Article';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Card } from '@/shared/ui/Card';
@@ -99,9 +97,17 @@ export const ArticlesPageFilters = memo((props: ArticlesPageFiltersProps) => {
                 <ArticleViewSelector view={view} onViewClick={onChangeView} />
             </div>
             <Card className={cls.search}>
-                <Input value={search} placeholder={t('Поиск')} onChange={onChangeSearch} />
+                <Input
+                    value={search}
+                    placeholder={t('Поиск')}
+                    onChange={onChangeSearch}
+                />
             </Card>
-            <ArticleTypeTabs className={cls.tabs} value={type} onChangeType={onChangeType} />
+            <ArticleTypeTabs
+                className={cls.tabs}
+                value={type}
+                onChangeType={onChangeType}
+            />
         </div>
     );
 });

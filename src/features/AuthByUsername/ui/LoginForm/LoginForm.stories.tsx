@@ -13,37 +13,54 @@ export default {
     },
 } as ComponentMeta<typeof LoginForm>;
 
-const Template: ComponentStory<typeof LoginForm> = (args) => <LoginForm {...args} />;
+const Template: ComponentStory<typeof LoginForm> = (args) => (
+    <LoginForm {...args} />
+);
 
 export const Normal = Template.bind({});
 Normal.args = {};
-Normal.decorators = [StoreDecorator({
-    loginForm: { username: '123', password: 'asd' },
-})];
+Normal.decorators = [
+    StoreDecorator({
+        loginForm: { username: '123', password: 'asd' },
+    }),
+];
 export const Dark = Template.bind({});
 Dark.args = {};
-Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({
-    loginForm: { username: '123', password: 'asd' },
-})];
+Dark.decorators = [
+    ThemeDecorator(Theme.DARK),
+    StoreDecorator({
+        loginForm: { username: '123', password: 'asd' },
+    }),
+];
 
 export const NormalWithError = Template.bind({});
 NormalWithError.args = {};
-NormalWithError.decorators = [StoreDecorator({
-    loginForm: { username: '123', password: 'asd', error: '123' },
-})];
+NormalWithError.decorators = [
+    StoreDecorator({
+        loginForm: { username: '123', password: 'asd', error: '123' },
+    }),
+];
 export const DarkWithError = Template.bind({});
 DarkWithError.args = {};
-DarkWithError.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({
-    loginForm: { username: '123', password: 'asd', error: '123' },
-})];
+DarkWithError.decorators = [
+    ThemeDecorator(Theme.DARK),
+    StoreDecorator({
+        loginForm: { username: '123', password: 'asd', error: '123' },
+    }),
+];
 
 export const Loading = Template.bind({});
 Loading.args = {};
-Loading.decorators = [StoreDecorator({
-    loginForm: { isLoading: true },
-})];
+Loading.decorators = [
+    StoreDecorator({
+        loginForm: { isLoading: true },
+    }),
+];
 export const LoadingDark = Template.bind({});
 LoadingDark.args = {};
-LoadingDark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({
-    loginForm: { isLoading: true },
-})];
+LoadingDark.decorators = [
+    ThemeDecorator(Theme.DARK),
+    StoreDecorator({
+        loginForm: { isLoading: true },
+    }),
+];

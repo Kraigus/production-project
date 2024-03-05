@@ -1,10 +1,17 @@
 import React, {
-    InputHTMLAttributes, memo, useEffect, useState, useRef,
+    InputHTMLAttributes,
+    memo,
+    useEffect,
+    useState,
+    useRef,
 } from 'react';
 import { Mods, classNames } from '@/shared/lib/classNames/classNames';
 import cls from './Input.module.scss';
 
-type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'readOnly'>;
+type HTMLInputProps = Omit<
+    InputHTMLAttributes<HTMLInputElement>,
+    'value' | 'onChange' | 'readOnly'
+>;
 
 interface InputProps extends HTMLInputProps {
     className?: string;
@@ -16,7 +23,14 @@ interface InputProps extends HTMLInputProps {
 
 export const Input = memo((props: InputProps) => {
     const {
-        className, value, onChange, type = 'text', placeholder, autofocus, readonly, ...otherProps
+        className,
+        value,
+        onChange,
+        type = 'text',
+        placeholder,
+        autofocus,
+        readonly,
+        ...otherProps
     } = props;
     const ref = useRef<HTMLInputElement>(null);
     const [isFocused, setIsFocused] = useState(false);
@@ -56,7 +70,9 @@ export const Input = memo((props: InputProps) => {
 
     return (
         <div className={classNames(cls.InputWrapper, mods, [className])}>
-            {placeholder && <div className={cls.placeholder}>{`${placeholder}>`}</div>}
+            {placeholder && (
+                <div className={cls.placeholder}>{`${placeholder}>`}</div>
+            )}
             <div className={cls.caretWrapper}>
                 <input
                     ref={ref}
@@ -70,7 +86,12 @@ export const Input = memo((props: InputProps) => {
                     onSelect={onSelect}
                     {...otherProps}
                 />
-                {isCaretVisible && <span style={{ left: `${caretPosition * 9}px` }} className={cls.caret} />}
+                {isCaretVisible && (
+                    <span
+                        style={{ left: `${caretPosition * 9}px` }}
+                        className={cls.caret}
+                    />
+                )}
             </div>
         </div>
     );

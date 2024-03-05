@@ -121,8 +121,8 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
         <DynamicModuleLoader reducers={reducers}>
             <VStack gap="8" max className={classNames('', {}, [className])}>
                 <EditableProfileCardHeader />
-                {validateErrors?.length
-                    && validateErrors.map((err) => (
+                {validateErrors?.length &&
+                    validateErrors.map((err) => (
                         <Text
                             key={err}
                             theme={TextTheme.ERROR}

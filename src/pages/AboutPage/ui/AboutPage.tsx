@@ -4,14 +4,19 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { Page } from '@/widgets/Page';
 
 interface AboutPageProps {
-    className?: string
+    className?: string;
 }
 
 const AboutPage: FC<AboutPageProps> = (props) => {
     const { t } = useTranslation('about');
     const { className } = props;
     return (
-        <Page data-testid="AboutPage" className={classNames('', {}, [className])}>{t('О сайте')}</Page>
+        <Page
+            data-testid="AboutPage"
+            className={classNames('', {}, [className])}
+        >
+            {t('О сайте')}
+        </Page>
     );
 };
 

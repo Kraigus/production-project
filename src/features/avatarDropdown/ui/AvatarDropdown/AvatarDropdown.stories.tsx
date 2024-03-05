@@ -12,7 +12,11 @@ export default {
     },
 } as ComponentMeta<typeof AvatarDropdown>;
 
-const Template: ComponentStory<typeof AvatarDropdown> = (args) => <div style={{ display: 'flex', justifyContent: 'end' }}><AvatarDropdown {...args} /></div>;
+const Template: ComponentStory<typeof AvatarDropdown> = (args) => (
+    <div style={{ display: 'flex', justifyContent: 'end' }}>
+        <AvatarDropdown {...args} />
+    </div>
+);
 
 export const Normal = Template.bind({});
 Normal.decorators = [

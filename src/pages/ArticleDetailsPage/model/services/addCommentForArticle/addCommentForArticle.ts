@@ -5,35 +5,34 @@ import { getUserAuthData } from '@/entities/User';
 import { getArticleDetailsData } from '@/entities/Article';
 import { fetchCommentsByArticleId } from '../fetchCommentsByArticleId/fetchCommentsByArticleId';
 
-export const addCommentForArticle = createAsyncThunk<Comment, string, ThunkConfig<string>>(
-    'articleDeatils/addCommentForArticle',
-    async (text, thunkApi) => {
-        const {
-            dispatch, extra, rejectWithValue, getState,
-        } = thunkApi;
-        const userData = getUserAuthData(getState());
-        const article = getArticleDetailsData(getState());
+export const addCommentForArticle = createAsyncThunk<
+    Comment,
+    string,
+    ThunkConfig<string>
+>('articleDeatils/addCommentForArticle', async (text, thunkApi) => {
+    const { dispatch, extra, rejectWithValue, getState } = thunkApi;
+    const userData = getUserAuthData(getState());
+    const article = getArticleDetailsData(getState());
 
-        if (!userData || !text || !article) {
-            rejectWithValue('error');
+    if (!userData || !text || !article) {
+        rejectWithValue('error');
+    }
+
+    try {
+        const response = await extra.api.post<Comment>('/comments', {
+            articleId: article?.id,
+            text,
+            userId: userData?.id,
+        });
+
+        if (!response.data) {
+            throw new Error();
         }
 
-        try {
-            const response = await extra.api.post<Comment>('/comments', {
-                articleId: article?.id,
-                text,
-                userId: userData?.id,
-            });
+        dispatch(fetchCommentsByArticleId(article?.id));
 
-            if (!response.data) {
-                throw new Error();
-            }
-
-            dispatch(fetchCommentsByArticleId(article?.id));
-
-            return response.data;
-        } catch (error) {
-            return rejectWithValue('error');
-        }
-    },
-);
+        return response.data;
+    } catch (error) {
+        return rejectWithValue('error');
+    }
+});

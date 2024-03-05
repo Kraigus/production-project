@@ -11,11 +11,10 @@ export default {
     },
 } as ComponentMeta<typeof ArticleDetailsComments>;
 
-const Template: ComponentStory<typeof ArticleDetailsComments> = (args) => <ArticleDetailsComments {...args} />;
+const Template: ComponentStory<typeof ArticleDetailsComments> = (args) => (
+    <ArticleDetailsComments {...args} />
+);
 
 export const Normal = Template.bind({});
 Normal.args = {};
-Normal.decorators = [
-    StoreDecorator({
-    }),
-];
+Normal.decorators = [StoreDecorator({})];

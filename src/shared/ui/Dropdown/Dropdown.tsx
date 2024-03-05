@@ -27,25 +27,23 @@ const mapDirectionClass: Record<DropdownDirection, string> = {
 };
 
 export function Dropdown(props: DropdownProps) {
-    const {
-        className, trigger, items, direction = 'bottom right',
-    } = props;
+    const { className, trigger, items, direction = 'bottom right' } = props;
 
     const menuClasses = [mapDirectionClass[direction]];
 
     return (
         <Menu as="div" className={classNames(cls.Dropdown, {}, [className])}>
-            <Menu.Button className={cls.btn}>
-                {trigger}
-            </Menu.Button>
+            <Menu.Button className={cls.btn}>{trigger}</Menu.Button>
             <Menu.Items className={classNames(cls.menu, {}, menuClasses)}>
                 {items.map((item) => {
-                    const content = ({ active }: {active: boolean}) => (
+                    const content = ({ active }: { active: boolean }) => (
                         <button
                             type="button"
                             disabled={item.disabled}
                             onClick={item.onClick}
-                            className={classNames(cls.item, { [cls.active]: active })}
+                            className={classNames(cls.item, {
+                                [cls.active]: active,
+                            })}
                         >
                             {item.content}
                         </button>
@@ -53,7 +51,11 @@ export function Dropdown(props: DropdownProps) {
 
                     if (item.href) {
                         return (
-                            <Menu.Item as={AppLink} to={item.href} disabled={item.disabled}>
+                            <Menu.Item
+                                as={AppLink}
+                                to={item.href}
+                                disabled={item.disabled}
+                            >
                                 {content}
                             </Menu.Item>
                         );
@@ -65,7 +67,6 @@ export function Dropdown(props: DropdownProps) {
                         </Menu.Item>
                     );
                 })}
-
             </Menu.Items>
         </Menu>
     );

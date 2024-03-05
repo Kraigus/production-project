@@ -11,7 +11,9 @@ export default {
     },
 } as ComponentMeta<typeof ArticleDetailsPage>;
 
-const Template: ComponentStory<typeof ArticleDetailsPage> = (args) => <ArticleDetailsPage {...args} />;
+const Template: ComponentStory<typeof ArticleDetailsPage> = (args) => (
+    <ArticleDetailsPage {...args} />
+);
 
 const article = {
     id: '1',
@@ -105,9 +107,7 @@ Normal.parameters = {
             url: `${__API__}/article-ratings?userId=1&articleId=`,
             method: 'GET',
             status: 200,
-            response: [
-                { rate: 4 },
-            ],
+            response: [{ rate: 4 }],
         },
         {
             url: `${__API__}/articles?_limit=3`,

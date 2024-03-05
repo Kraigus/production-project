@@ -15,9 +15,7 @@ interface ArticleSortSelectorProps {
 }
 
 export const ArticleSortSelector = memo((props: ArticleSortSelectorProps) => {
-    const {
-        className, sort, order, onChangeOrder, onChangeSort,
-    } = props;
+    const { className, sort, order, onChangeOrder, onChangeSort } = props;
 
     const { t } = useTranslation();
 
@@ -40,7 +38,12 @@ export const ArticleSortSelector = memo((props: ArticleSortSelectorProps) => {
 
     return (
         <div className={classNames(cls.ArticleSortSelector, {}, [className])}>
-            <Select value={sort} options={sortFieldOptions} label={t('Сортировать по')} onChange={onChangeSort} />
+            <Select
+                value={sort}
+                options={sortFieldOptions}
+                label={t('Сортировать по')}
+                onChange={onChangeSort}
+            />
             <Select
                 className={cls.order}
                 value={order}

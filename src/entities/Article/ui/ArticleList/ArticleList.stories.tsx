@@ -11,7 +11,9 @@ export default {
     },
 } as ComponentMeta<typeof ArticleList>;
 
-const Template: ComponentStory<typeof ArticleList> = (args) => <ArticleList {...args} />;
+const Template: ComponentStory<typeof ArticleList> = (args) => (
+    <ArticleList {...args} />
+);
 const article = {
     id: '1',
     title: 'Javascript news',
@@ -101,7 +103,11 @@ BigList.args = {
 };
 
 export const isLoadingSmall = Template.bind({});
-isLoadingSmall.args = { isLoading: true, articles: [], view: ArticleView.SMALL };
+isLoadingSmall.args = {
+    isLoading: true,
+    articles: [],
+    view: ArticleView.SMALL,
+};
 
 export const SmallList = Template.bind({});
 SmallList.args = {
