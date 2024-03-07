@@ -58,6 +58,7 @@ module.exports = {
                     'target',
                     'fallback',
                     'border',
+                    'feature',
                 ],
             },
         ],
