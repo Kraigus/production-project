@@ -8,7 +8,7 @@ module.exports = {
         'plugin:react/recommended',
         'airbnb',
         'plugin:i18next/recommended',
-        "prettier"
+        'prettier',
     ],
     parser: '@typescript-eslint/parser',
     parserOptions: {
@@ -92,6 +92,7 @@ module.exports = {
         ],
         'linebreak-style': ['off', 'unix'],
         'react/jsx-max-props-per-line': ['error', { maximum: 4 }],
+        'react/no-unstable-nested-components': 'warn',
     },
     globals: {
         __IS_DEV__: true,
