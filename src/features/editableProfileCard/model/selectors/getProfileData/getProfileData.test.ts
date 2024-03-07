@@ -6,10 +6,10 @@ import { getProfileData } from './getProfileData';
 describe('getProfileData.test', () => {
     test('should return error', () => {
         const data = {
-            username: 'admin',
+            username: 'vasya',
             age: 22,
-            country: Country.Ukraine,
-            lastname: 'ulbi tv',
+            country: Country.Armenia,
+            lastname: 'oblomov',
             first: 'asd',
             city: 'asf',
             currency: Currency.USD,

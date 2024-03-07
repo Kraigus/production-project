@@ -5,10 +5,10 @@ import { ValidateProfileError } from '../../consts/consts';
 import { updateProfileData } from './updateProfileData';
 
 const data = {
-    username: 'admin',
+    username: 'vasya',
     age: 22,
-    country: Country.Ukraine,
-    lastname: 'ulbi tv',
+    country: Country.Armenia,
+    lastname: 'oblomov',
     first: 'asd',
     city: 'asf',
     currency: Currency.USD,

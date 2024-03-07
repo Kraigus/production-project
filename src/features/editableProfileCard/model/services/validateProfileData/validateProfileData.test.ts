@@ -4,10 +4,10 @@ import { ValidateProfileError } from '../../consts/consts';
 import { validateProfileData } from './validateProfileData';
 
 const data = {
-    username: 'admin',
+    username: 'vasya',
     age: 22,
-    country: Country.Ukraine,
-    lastname: 'ulbi tv',
+    country: Country.Armenia,
+    lastname: 'oblomov',
     first: 'asd',
     city: 'asf',
     currency: Currency.USD,
