@@ -97,6 +97,11 @@ Normal.decorators = [
             view: ArticleView.BIG,
             isLoading: false,
         },
+        user: {
+            authData: {
+                jsonSettings: { isArticlesPageWasOpened: true },
+            },
+        },
     }),
 ];
 
