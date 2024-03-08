@@ -7,13 +7,13 @@ import {
     ReducersList,
 } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { Avatar } from '@/shared/ui/Avatar';
+import { Avatar } from '@/shared/ui/deprecated/Avatar';
 import EyeIcon from '@/shared/assets/icons/eye.svg';
 import CalendarIcon from '@/shared/assets/icons/calendar.svg';
-import { Skeleton } from '@/shared/ui/Skeleton';
-import { Text, TextAlign, TextSize } from '@/shared/ui/Text';
-import { Icon } from '@/shared/ui/Icon';
-import { HStack, VStack } from '@/shared/ui/Stack';
+import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
+import { Text, TextAlign, TextSize } from '@/shared/ui/deprecated/Text';
+import { Icon } from '@/shared/ui/deprecated/Icon';
+import { HStack, VStack } from '@/shared/ui/deprecated/Stack';
 import {
     getArticleDetailsData,
     getArticleDetailsError,
