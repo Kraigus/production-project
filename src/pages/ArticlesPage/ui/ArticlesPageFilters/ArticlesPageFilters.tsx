@@ -15,7 +15,7 @@ import {
     getArticlesPageSort,
     getArticlesPageType,
     getArticlesPageView,
-} from '../../model/selectors/articlePageSelectors';
+} from '../../model/selectors/articlesPageSelectors';
 import cls from './ArticlesPageFilters.module.scss';
 import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList';
 import { ArticleSortSelector } from '@/features/ArticleSortSelector';
