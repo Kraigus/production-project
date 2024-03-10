@@ -24,7 +24,7 @@
         width: 100%;
         max-height: 250px;
         object-fit: cover;
-        margin-top: 16px;
+        margin: 16px 0;
     }
 
     .footer {
@@ -41,8 +41,24 @@
 
 .SMALL {
     width: 230px;
-    transition: 0.2;
+    transition: 0.2s;
     cursor: pointer;
+
+    .date {
+        position: absolute;
+        right: 0;
+        top: 0;
+        display: none;
+    }
+
+    &:hover {
+        opacity: 0.8;
+        transform: scale(1.01);
+
+        .date {
+            display: block;
+        }
+    }
 
     .imageWrapper {
         width: 200px;
@@ -54,22 +70,6 @@
         width: 200px;
         height: 200px;
         object-fit: cover;
-    }
-
-    .date {
-        display: none;
-        position: absolute;
-        right: 0;
-        top: 0;
-    }
-
-    &:hover {
-        opacity: 0.8;
-        transform: scale(1.01);
-
-        .date {
-            display: block;
-        }
     }
 
     .infoWrapper {
