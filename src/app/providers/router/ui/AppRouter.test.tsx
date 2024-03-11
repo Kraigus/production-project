@@ -40,7 +40,7 @@ describe('app/router/AppRouter', () => {
         componentRender(<AppRouter />, {
             route: getRouteProfile('1'),
             initialState: {
-                user: { _inited: true, authData: {} },
+                user: { _inited: true, authData: { roles: [UserRole.ADMIN] } },
             },
         });
 
